@@ -8,6 +8,7 @@ import { MariuszHomeComponentComponent } from './mariusz-home-component.componen
 import { DevHomeComponentComponent } from './dev-home-component.component';
 import { NkamaszewskiHomeComponent } from './nkamaszewski-home.component';
 import { MateuszHomeComponent } from './mateusz-home.component';
+import { DarekHomeComponentComponent } from './darek-home-component.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MateuszHomeComponent } from './mateusz-home.component';
     MariuszHomeComponentComponent,
     DevHomeComponentComponent,
     NkamaszewskiHomeComponent,
-    MateuszHomeComponent
+    MateuszHomeComponent,
+    DarekHomeComponentComponent
   ],
   imports: [
     BrowserModule,
