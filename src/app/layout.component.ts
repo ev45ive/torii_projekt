@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-layout',
+  selector: 'layout',
   template: `
-    <p>
-      layout works!
-    </p>
+  <div class="row">
+    <div class="col"> Menu </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <ng-content></ng-content>
+    </div>
+  </div>
   `,
   styles: []
 })

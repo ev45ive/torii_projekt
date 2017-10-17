@@ -6,8 +6,10 @@ import { MariuszHomeComponentComponent } from './mariusz-home-component.componen
 import { NkamaszewskiHomeComponent } from './nkamaszewski-home.component';
 import { KasiafinHomeComponent } from './kasiafin-home.component';
 import { DarekHomeComponentComponent } from './darek-home-component.component';
+import { HomeComponent } from './home.component';
 
 const routes:Routes = [
+    { path:'', component: HomeComponent},
     { path:'roselew', component: RoselewHomeComponent},
     { path:'mateusz', component: MateuszHomeComponent},
     { path:'dev', component: DevHomeComponentComponent},
