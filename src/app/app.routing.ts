@@ -5,6 +5,7 @@ import { DevHomeComponentComponent } from './dev-home-component.component';
 import { MariuszHomeComponentComponent } from './mariusz-home-component.component';
 import { NkamaszewskiHomeComponent } from './nkamaszewski-home.component';
 import { KasiafinHomeComponent } from './kasiafin-home.component';
+import { DarekHomeComponentComponent } from './darek-home-component.component';
 
 const routes:Routes = [
     { path:'roselew', component: RoselewHomeComponent},
@@ -12,7 +13,8 @@ const routes:Routes = [
     { path:'dev', component: DevHomeComponentComponent},
     { path:'mariusz', component: MariuszHomeComponentComponent},
     { path:'nkamaszewski', component: NkamaszewskiHomeComponent},
-    { path:"kasiafin", component:KasiafinHomeComponent}
+    { path:"kasiafin", component:KasiafinHomeComponent},
+    { path:"darek", component:DarekHomeComponentComponent}
 ]
 
 export const Routing = RouterModule.forRoot(routes)
