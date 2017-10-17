@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { Routing } from "./app.routing";
+import { RoselewHomeComponent } from './roselew-home.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RoselewHomeComponent
   ],
   imports: [
     BrowserModule,
