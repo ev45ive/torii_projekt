@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { Routing } from "./app.routing";
+import { NkamaszewskiHomeComponent } from './nkamaszewski-home.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NkamaszewskiHomeComponent
   ],
   imports: [
     BrowserModule,
