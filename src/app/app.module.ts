@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { Routing } from "./app.routing";
+import { Ev45iveHomeComponent } from './ev45ive-home.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Ev45iveHomeComponent
   ],
   imports: [
     BrowserModule,
