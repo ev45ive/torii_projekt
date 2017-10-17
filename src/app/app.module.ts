@@ -10,6 +10,7 @@ import { NkamaszewskiHomeComponent } from './nkamaszewski-home.component';
 import { MateuszHomeComponent } from './mateusz-home.component';
 import { DarekHomeComponentComponent } from './darek-home-component.component';
 import { KasiafinHomeComponent } from './kasiafin-home.component';
+import { MenuComponent } from './menu.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { KasiafinHomeComponent } from './kasiafin-home.component';
     NkamaszewskiHomeComponent,
     MateuszHomeComponent,
     DarekHomeComponentComponent,
-    KasiafinHomeComponent
+    KasiafinHomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
