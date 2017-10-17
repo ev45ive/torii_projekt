@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from '@angular/router'
-import { Ev45iveHomeComponent } from './ev45ive-home.component';
+import { MateuszHomeComponent } from './mateusz-home.component';
 
 const routes:Routes = [
-    { path:'ev45ive', component: Ev45iveHomeComponent}
+    { path:'mateusz', component: MateuszHomeComponent}
 ]
 
 export const Routing = RouterModule.forRoot(routes)
