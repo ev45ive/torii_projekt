@@ -9,6 +9,8 @@ import { DevHomeComponentComponent } from './dev-home-component.component';
 import { NkamaszewskiHomeComponent } from './nkamaszewski-home.component';
 import { MateuszHomeComponent } from './mateusz-home.component';
 import { DarekHomeComponentComponent } from './darek-home-component.component';
+import { KasiafinHomeComponent } from './kasiafin-home.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { DarekHomeComponentComponent } from './darek-home-component.component';
     DevHomeComponentComponent,
     NkamaszewskiHomeComponent,
     MateuszHomeComponent,
-    DarekHomeComponentComponent
+    DarekHomeComponentComponent,
+    KasiafinHomeComponent
   ],
   imports: [
     BrowserModule,
