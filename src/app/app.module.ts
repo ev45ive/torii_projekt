@@ -11,6 +11,8 @@ import { MateuszHomeComponent } from './mateusz-home.component';
 import { DarekHomeComponentComponent } from './darek-home-component.component';
 import { KasiafinHomeComponent } from './kasiafin-home.component';
 import { MenuComponent } from './menu.component';
+import { LayoutComponent } from './layout.component';
+import { HomeComponent } from './home.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { MenuComponent } from './menu.component';
     MateuszHomeComponent,
     DarekHomeComponentComponent,
     KasiafinHomeComponent,
-    MenuComponent
+    MenuComponent,
+    LayoutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
