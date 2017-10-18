@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
       <p>
         search works!
       </p>
-      <options-tree [params]="parameters"></options-tree>
+      <options-tree [params]="parameters" (change)="treeChange($event)"></options-tree>
     </app-layout>
   `,
   styles: []
 })
 export class SearchComponent implements OnInit {
+
+  treeChange($event){
+    console.log($event)
+  }
 
   parameters = [
     { label: "Wynagrodzenie", children: [], expanded: false },
