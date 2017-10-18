@@ -7,15 +7,27 @@ import { Component, OnInit } from '@angular/core';
       <p>
         search works!
       </p>
-      <options-tree [params]="parameters" (change)="treeChange($event)"></options-tree>
-    </app-layout>
+      <div class="row">
+        <div class="col">
+            <options-tree [params]="parameters" (paramChange)="treeChange($event)"></options-tree>          
+        </div>
+        <div class="col">{{ selection | json }} </div>
+      </div>
+      </app-layout>
   `,
   styles: []
 })
 export class SearchComponent implements OnInit {
 
-  treeChange($event){
-    console.log($event)
+  selection = {}
+
+  treeChange(event){
+    console.log(event)
+    if(event.checked){
+      this.selection[event.param.label] = event.checked;
+    }else{
+      delete this.selection[event.param.label]
+    }
   }
 
   parameters = [
