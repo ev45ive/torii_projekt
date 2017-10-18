@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
         { label: "Podstawowe", children: [], expanded: false },
         { label: "Srednie", children: [], expanded: false },
         { label: "Wyzsze", children: [], expanded: false },
-      ], expanded: false
+      ], expanded: true
     },
     {
       label: "Branza", children: [
