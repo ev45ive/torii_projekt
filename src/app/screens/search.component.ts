@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from '../views/options-tree.component';
 
 @Component({
   selector: 'app-search',
@@ -30,7 +31,7 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  parameters = [
+  parameters:Item[] = [
     { label: "Wynagrodzenie", children: [], expanded: false },
     {
       label: "Wyksztalcenie", children: [

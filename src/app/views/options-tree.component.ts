@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
-interface Item{
+export interface Item{
   label:string
   children: Item[]
-  expanded:boolean
+  expanded?:boolean
 }
 
 @Component({
