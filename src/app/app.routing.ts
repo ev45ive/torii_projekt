@@ -1,20 +1,15 @@
 import { RouterModule, Routes } from '@angular/router'
-import { RoselewHomeComponent } from './roselew-home.component';
-import { MateuszHomeComponent } from './mateusz-home.component';
-import { DevHomeComponentComponent } from './dev-home-component.component';
-import { MariuszHomeComponentComponent } from './mariusz-home-component.component';
-import { NkamaszewskiHomeComponent } from './nkamaszewski-home.component';
-import { KasiafinHomeComponent } from './kasiafin-home.component';
-import { DarekHomeComponentComponent } from './darek-home-component.component';
+import { HomeComponent } from './screens/home.component';
+import { LoginComponent } from './screens/login.component';
+import { SearchComponent } from './screens/search.component';
+import { TestComponent } from './screens/test.component';
+
 
 const routes:Routes = [
-    { path:'roselew', component: RoselewHomeComponent},
-    { path:'mateusz', component: MateuszHomeComponent},
-    { path:'dev', component: DevHomeComponentComponent},
-    { path:'mariusz', component: MariuszHomeComponentComponent},
-    { path:'nkamaszewski', component: NkamaszewskiHomeComponent},
-    { path:"kasiafin", component:KasiafinHomeComponent},
-    { path:"darek", component:DarekHomeComponentComponent}
+    { path:'', component: HomeComponent},
+    { path:'login', component: LoginComponent},
+    { path:'search', component: SearchComponent},
+    { path:'test', component: TestComponent},
 ]
 
 export const Routing = RouterModule.forRoot(routes)
