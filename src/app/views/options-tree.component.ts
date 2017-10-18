@@ -20,7 +20,7 @@ export interface Item{
 
         <options-tree *ngIf="param.expanded && param.children.length"
           [params]="param.children"
-          (paramChange)="childChange($event)"
+          (paramChange)="childChange($event, param)"
           ></options-tree>
       </li>
     </ul>
@@ -58,7 +58,8 @@ export class OptionsTreeComponent implements OnInit {
     })
   }
 
-  childChange(event){
+  childChange(event,parent){
+    event.parent = event.parent || parent
     this.paramChange.emit(event)
   }
 

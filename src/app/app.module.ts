@@ -13,6 +13,7 @@ import { TestComponent } from './screens/test.component';
 import { UserPanelComponent } from './containers/user-panel.component';
 import { UserService } from './services/user.service';
 import { OptionsTreeComponent } from './views/options-tree.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { OptionsTreeComponent } from './views/options-tree.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     Routing
   ],
   providers: [
