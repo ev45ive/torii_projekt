@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-layout',
   template: `
     <div class="row"><div class="col"> 
+      <user-panel></user-panel>
       <app-menu [links]="links"></app-menu> 
     </div></div>
     <div class="row"><div class="col"> 
