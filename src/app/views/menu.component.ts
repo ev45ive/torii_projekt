@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="navbar-collapse">
     <ul class="navbar-nav">
-      <li class="nav-item" *ngFor="let link of links">
-        <a class="nav-link" [routerLink]="link.path">{{link.title}} </a>
+      <li class="nav-item" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact:true}"  
+         *ngFor="let link of links">
+        <a class="nav-link"   [routerLink]="link.path">{{link.title}} </a>
       </li>
     </ul>
   </div>
@@ -18,7 +21,7 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   links = [ 
-    { path:'', title:'Home'},
+    { path:'/', title:'Home'},
     // { path:'/login', title:'Login'},
     { path:'/search', title:'Search'},
     { path:'/test', title:'Test'},
