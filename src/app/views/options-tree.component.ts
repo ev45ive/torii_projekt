@@ -14,6 +14,8 @@ interface Item{
         [class.expanded]="param.expanded"
         [class.children]="param.children.length">
 
+        <input type="checkbox">
+
         <span (click)="toggle(param)">{{param.label}}</span>
 
         <options-tree *ngIf="param.expanded && param.children.length" [params]="param.children"></options-tree>
@@ -21,6 +23,9 @@ interface Item{
     </ul>
   `,
   styles: [`
+    ul{
+      list-style: none;
+    }
     li.children > span::after{
       display: inline-block;
       width: 0;
