@@ -12,6 +12,7 @@ import { SearchComponent } from './screens/search.component';
 import { TestComponent } from './screens/test.component';
 import { UserPanelComponent } from './containers/user-panel.component';
 import { UserService } from './services/user.service';
+import { OptionsTreeComponent } from './views/options-tree.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { UserService } from './services/user.service';
     SearchComponent,
     TestComponent,
     UserPanelComponent,
+    OptionsTreeComponent,
   ],
   imports: [
     BrowserModule,

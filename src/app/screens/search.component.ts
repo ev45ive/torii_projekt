@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
       <p>
         search works!
       </p>
+      <options-tree [params]="parameters"></options-tree>
     </app-layout>
   `,
   styles: []
