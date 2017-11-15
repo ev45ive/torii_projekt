@@ -15,20 +15,35 @@ export class TestComponent implements OnInit {
 
   constructor() { }
 
-  getTestData(cb){
+  getTestData(cb) {
 
-    setTimeout(()=>{
+    setTimeout(() => {
       let data = 'test ' + Date.now()
       cb(data)
-    },2000)
+    }, 2000)
+  }
+
+  getAllData(cb){    
+    this.getTestData((data) => {
+      console.log(data)
+
+      this.getTestData(data2 => {
+        console.log(data2)
+
+        this.getTestData(data3 => {
+          console.log(data3)
+
+          cb(data,data2,data3)
+        })
+
+      })
+    })
   }
 
   ngOnInit() {
-    let callback = (data)=>{
-      console.log(data)
-      
-    }
-    this.getTestData(callback)
+    this.getAllData( (...alldata) =>{
+      console.log(alldata)
+    })
 
   }
 
