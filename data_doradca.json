@@ -47,6 +47,11 @@
       "userId": 2,
       "occupationId": 1,
       "id": 4
+    },
+    {
+      "userId": 1,
+      "occupationId": 1,
+      "id": 5
     }
   ]
 }

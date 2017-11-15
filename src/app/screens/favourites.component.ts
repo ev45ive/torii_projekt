@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { UserService } from "../services/user.service";
 
 @Component({
   selector: 'favourites',
@@ -17,14 +18,18 @@ export class FavouritesComponent implements OnInit {
 
   favourites
 
-  constructor(private http:HttpClient) { }
+  constructor(private service:UserService, 
+  private http:HttpClient) { }
 
   ngOnInit() {
     this.fetchFavourites()
   }
 
   fetchFavourites(){
-      this.favourites = this.http.get<any>('http://localhost:3000/favourites?_expand=occupation')
+      let user = this.service.getUser().getValue()
+      this.favourites = this.http.get<any>(
+        `http://localhost:3000/users/${user['id']}/favourites?_expand=occupation`
+      )
       // .subscribe( favourites => this.favourites = favourites )
   }
 
