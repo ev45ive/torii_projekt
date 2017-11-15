@@ -30,8 +30,13 @@
   "favourites": [
     {
       "userId": 1,
-      "occupationId": 2,
+      "occupationId": 1,
       "id": 1
+    },
+    {
+      "userId": 1,
+      "occupationId": 2,
+      "id": 2
     }
   ]
 }

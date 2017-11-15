@@ -14,6 +14,7 @@ import { UserPanelComponent } from './containers/user-panel.component';
 import { UserService } from './services/user.service';
 import { OptionsTreeComponent } from './views/options-tree.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FavouritesComponent } from './screens/favourites.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     TestComponent,
     UserPanelComponent,
     OptionsTreeComponent,
+    FavouritesComponent,
   ],
   imports: [
     BrowserModule,

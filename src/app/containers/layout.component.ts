@@ -23,6 +23,7 @@ export class LayoutComponent implements OnInit {
     // { path:'/login', title:'Login'},
     { path:'/search', title:'Search'},
     { path:'/test', title:'Test'},
+    { path:'/favourites', title:'Favourites'},
   ]
 
   constructor() { }
