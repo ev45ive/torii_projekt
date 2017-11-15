@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
     <form #formRef="ngForm" (ngSubmit)="login(formRef.value)">
       <div class="form-group">
         <label for="">Login</label>
-        <input type="text" name="login" ngModel class="form-control">
+        <input type="text" name="name" ngModel class="form-control">
         </div>
       <div class="form-group">
         <label for="">Password</label>
@@ -23,13 +23,17 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  constructor(private service:UserService, 
+  private router:Router) { }
+
   login(user){
     this.service.logIn(user)
-    // TODO: wait for login!
-    this.router.navigate(['/'])
+      .subscribe(user => {
+        debugger
+        //  wait for login!
+        this.router.navigate(['/'])
+      })
   }
-
-  constructor(private service:UserService, private router:Router) { }
 
   ngOnInit() {
   }

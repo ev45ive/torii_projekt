@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../views/options-tree.component';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from "../services/user.service";
 
 @Component({
   selector: 'app-search',
@@ -33,7 +34,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private service:UserService, 
+  private http:HttpClient) { }
 
   ngOnInit() {
       this.fetchFavourites()
@@ -51,8 +53,9 @@ export class SearchComponent implements OnInit {
       .subscribe(()=>this.fetchFavourites())
     }else{
       // jesli nie istnieje tworzymy nowy
+      let user = this.service.user.getValue()
       let favourite = {
-          "userId":1,
+          "userId": user['id'],
           "occupationId":occupation.id
       }
       this.http.post('http://localhost:3000/favourites',favourite)
@@ -64,7 +67,8 @@ export class SearchComponent implements OnInit {
 
   favourites = {}
   fetchFavourites(){  
-    this.http.get('http://localhost:3000/favourites')
+      let user = this.service.user.getValue()
+    this.http.get(`http://localhost:3000/user/${user['id']}/favourites`)
     .subscribe((favourites:any[])=>{
 
       // czyscimy favourites

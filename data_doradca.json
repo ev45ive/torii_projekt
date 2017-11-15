@@ -5,6 +5,12 @@
       "email": "norbert@doradca",
       "password": "supertajne",
       "name": "Tomasz"
+    },
+    {
+      "id": 2,
+      "email": "mariusz@doradca",
+      "password": "supertajne",
+      "name": "Zbigniew"
     }
   ],
   "occupations": [
@@ -30,13 +36,17 @@
   "favourites": [
     {
       "userId": 1,
-      "occupationId": 1,
-      "id": 1
-    },
-    {
-      "userId": 1,
       "occupationId": 2,
       "id": 2
+    },
+    {
+      "occupationId": 1,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "occupationId": 1,
+      "id": 4
     }
   ]
 }
