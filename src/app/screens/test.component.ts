@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-test',
@@ -16,21 +17,23 @@ export class TestComponent implements OnInit {
   constructor() { }
 
   getTestData(param) {
-    return new Promise((resolve, reject)=>{
-      setTimeout(() => {
+    return Observable.create( (observer)=>{
+
+      setInterval(() => {
         let data = 'echo ' + param
-        reject(data)
+        observer.next(data)
+        observer.complete()
       }, 2000)
+
     })
   }
 
   getAllData(cb){ 
-    var p1 = this.getTestData('Ala')
+    var o1 = this.getTestData('Ala')
 
-    p1.then(x1 => x1 + ' ma')
-      .then(x2 => this.getTestData(x2 + ' kota'))
-      .then(x3 => console.log(x3))
-      .catch( err => console.log('blad'))
+    o1.subscribe(nextData => {
+      console.log(nextData)
+    })
 
     console.log('najpierw')
   }
