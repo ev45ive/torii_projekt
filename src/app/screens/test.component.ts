@@ -16,10 +16,10 @@ export class TestComponent implements OnInit {
   constructor() { }
 
   getTestData(param) {
-    return new Promise((resolve)=>{
+    return new Promise((resolve, reject)=>{
       setTimeout(() => {
         let data = 'echo ' + param
-        resolve(data)
+        reject(data)
       }, 2000)
     })
   }
@@ -30,6 +30,7 @@ export class TestComponent implements OnInit {
     p1.then(x1 => x1 + ' ma')
       .then(x2 => this.getTestData(x2 + ' kota'))
       .then(x3 => console.log(x3))
+      .catch( err => console.log('blad'))
 
     console.log('najpierw')
   }
