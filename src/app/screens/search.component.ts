@@ -14,15 +14,17 @@ import { HttpClient } from '@angular/common/http';
             <options-tree [params]="parameters" (paramChange)="treeChange($event)"></options-tree>          
         </div>
         <div class="col">
+        <input class="form-control" placeholder="Search" (keyup)="search($event.target.value)">
         <h5>Params:</h5>
         {{ selection | json }} 
         <h5>Results:</h5>
-        <ul>
-          <li *ngFor="let result of results">
-            {{result.name}}
-          </li>
+          <ul>
+            <li *ngFor="let result of results">
+              {{result.name}}
+              <button *ngIf="!favourites[result.id]" (click)="favourite(result)">☆</button>
+              <button *ngIf="favourites[result.id]" (click)="favourite(result)">★</button>
+            </li>
         </ul>
-
         </div>
       </div>
       </app-layout>
@@ -31,8 +33,51 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchComponent implements OnInit {
 
+  constructor(private http:HttpClient) { }
+
+  ngOnInit() {
+      this.fetchFavourites()
+      this.search('')
+  }
+
   selection = {}
 
+  favourite(occupation){
+    let favourite = this.favourites[occupation.id]
+
+    // Jesli istnieje - usuwamy
+    if(favourite){
+      this.http.delete('http://localhost:3000/favourites/'+favourite.id)
+      .subscribe(()=>this.fetchFavourites())
+    }else{
+      // jesli nie istnieje tworzymy nowy
+      let favourite = {
+          "userId":1,
+          "occupationId":occupation.id
+      }
+      this.http.post('http://localhost:3000/favourites',favourite)
+      .subscribe(()=>{
+        this.fetchFavourites()
+      })
+    }
+  }
+
+  favourites = {}
+  fetchFavourites(){  
+    this.http.get('http://localhost:3000/favourites')
+    .subscribe((favourites:any[])=>{
+
+      // czyscimy favourites
+      this.favourites = {}
+
+      // zapisujemy w postaci {id: favourite} 
+      // aby szybko znalesc po id - favourites[occupation.id]
+      favourites.forEach(favourite => {
+        this.favourites[favourite.occupationId] = favourite
+      });
+    })
+
+  }
 
   treeChange(event){
     // console.log(event)
@@ -62,7 +107,14 @@ export class SearchComponent implements OnInit {
     })
   }
 
-  results = []
+  search(query=''){
+    this.http.get(`http://localhost:3000/occupations?name_like=${query}`)
+    .subscribe( results => {
+      this.results = results
+    })
+  }
+
+  results
 
   parameters:Item[] = [
     { label: "Wynagrodzenie", children: [], expanded: false },
@@ -86,9 +138,6 @@ export class SearchComponent implements OnInit {
     },
   ]
 
-  constructor(private http:HttpClient) { }
 
-  ngOnInit() {
-  }
 
 }

@@ -1,42 +1,37 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "email":"norbert@doradca",
-            "password":"supertajne",
-            "name": "Tomasz"
-        }
-    ],
-    "occupations": [
-        {
-            "id": 1,
-            "name": "Web Developer",
-            "description": "bleh blah",
-            "params": {
-                "Branza": "IT",
-                "Wyksztalcenie": "Podstawowe"
-            }
-        },
-        {
-            "id": 2,
-            "name": "Lekarz",
-            "description": "bleh blah",
-            "params": {
-                "Branza": "Medycyna",
-                "Wyksztalcenie": "Wyzsze"
-            }
-        }
-    ],
-    "favourites":[
-        {
-            "id":1,
-            "userId":1,
-            "occupationId":1
-        },
-        {
-            "id":2,
-            "userId":1,
-            "occupationId":2
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "email": "norbert@doradca",
+      "password": "supertajne",
+      "name": "Tomasz"
+    }
+  ],
+  "occupations": [
+    {
+      "id": 1,
+      "name": "Web Developer",
+      "description": "bleh blah",
+      "params": {
+        "Branza": "IT",
+        "Wyksztalcenie": "Podstawowe"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Lekarz",
+      "description": "bleh blah",
+      "params": {
+        "Branza": "Medycyna",
+        "Wyksztalcenie": "Wyzsze"
+      }
+    }
+  ],
+  "favourites": [
+    {
+      "userId": 1,
+      "occupationId": 2,
+      "id": 1
+    }
+  ]
 }
