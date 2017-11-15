@@ -13,7 +13,8 @@ export class UserService {
 
   logIn(user){
     // TODO:
-    // return this.http.post('/login',user).subscribe( resp => {    })
+    // return this.http.get('/users?name=user.name&password=user.password)
+    //.subscribe( resp => {    })
     this.user = {
       name: user.login,
       email: user.login

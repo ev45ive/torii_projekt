@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "api": " json-server ./data_doradca.json"
+    "api": " json-server --watch ./data_doradca.json"
   },
   "private": true,
   "dependencies": {
